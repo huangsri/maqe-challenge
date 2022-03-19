@@ -1,11 +1,16 @@
-import { NextPage } from 'next'
 import { Fragment } from 'react'
+import { NextPage } from 'next'
+import Head from 'next/head'
 
 import { PostList } from '@/features/forum/containers'
 
 const ForumPage: NextPage = () => {
   return (
     <Fragment>
+      <Head>
+        <title>Template and Styling | MAQE Challenges</title>
+      </Head>
+
       <div style={{ background: '#f7f7f7' }}>
         <div className="container">
           <h1>MAQE Forum</h1>
