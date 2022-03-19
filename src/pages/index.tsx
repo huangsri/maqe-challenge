@@ -33,8 +33,8 @@ const Home: NextPage = () => {
 
           .container {
             display: flex;
-            justify-content: center;
             flex-direction: column;
+            align-items: center;
             text-align: center;
             padding: 40px;
             gap: 20px;
