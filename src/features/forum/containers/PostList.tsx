@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 
 import { PostItem } from '../components'
 
-import POSTS from '@/constants/posts'
+import POSTS from '@/constants/posts.json'
 
 export const PostList = () => {
   const _posts = (POSTS as Post[]) || []

@@ -1,9 +1,9 @@
-import { Fragment } from 'react'
+import { Fragment, useMemo } from 'react'
 
 import { AuthorSection } from './AuthorSection'
 import { ContentSection } from './ContentSection'
 
-import AUTHORS from '@/constants/authors'
+import AUTHORS from '@/constants/authors.json'
 
 type ArticleItemProps = {
   post: Post
@@ -12,9 +12,13 @@ type ArticleItemProps = {
 export const PostItem = (props: ArticleItemProps): React.ReactElement => {
   const { post } = props
 
-  const author = (AUTHORS as Author[]).find(
-    (author) => author.id === post.author_id
-  ) as Author
+  const author = useMemo(
+    () =>
+      (AUTHORS as Author[]).find(
+        (author) => author.id === post.author_id
+      ) as Author,
+    [post.author_id]
+  )
 
   return (
     <Fragment>
