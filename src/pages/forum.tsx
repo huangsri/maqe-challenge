@@ -1,6 +1,7 @@
+import Head from 'next/head'
+import Link from 'next/link'
 import { Fragment } from 'react'
 import { NextPage } from 'next'
-import Head from 'next/head'
 
 import { PostList } from '@/features/forum/containers'
 
@@ -22,12 +23,16 @@ const ForumPage: NextPage = () => {
         </div>
       </div>
 
+      <Link href="/">
+        <a className="back-home">Back Home</a>
+      </Link>
+
       <style jsx>
         {`
           .container {
-            width: 1000px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 40px 0 40px;
+            padding: 60px 20px 40px;
           }
 
           .wrapper {
@@ -41,6 +46,18 @@ const ForumPage: NextPage = () => {
 
           h1 + p {
             margin-top: 16px;
+          }
+
+          a.back-home {
+            color: #67c3e9;
+            position: fixed;
+            left: 12px;
+            top: 12px;
+            font-size: 12px;
+          }
+
+          a.back-home:hover {
+            text-decoration: underline;
           }
         `}
       </style>

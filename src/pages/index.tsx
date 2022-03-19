@@ -1,28 +1,46 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
 import { Fragment } from 'react'
 import Link from 'next/link'
-
-import { CSSStyling } from '../components'
 
 const Home: NextPage = () => {
   return (
     <Fragment>
-      <Head>
-        <title>CSS Styling | MAQE Challenges</title>
-      </Head>
+      <div className="container">
+        <h1>Front-End Engineer</h1>
 
-      <div>
-        <div style={{ textAlign: 'center' }}>
-          <Link href="/forum">
-            <a>Forum Page</a>
-          </Link>
-        </div>
-
-        <div style={{ marginTop: '40px' }}>
-          <CSSStyling />
-        </div>
+        <Link href="/css">
+          <a>1. CSS Styling</a>
+        </Link>
+        <Link href="/forum">
+          <a>2. Template and Styling</a>
+        </Link>
       </div>
+
+      <style jsx>
+        {`
+          h1 {
+            font-weight: bold;
+            font-size: 32px;
+          }
+
+          a {
+            color: #67c3e9;
+          }
+
+          a:hover {
+            text-decoration: underline;
+          }
+
+          .container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 40px;
+            gap: 20px;
+          }
+        `}
+      </style>
     </Fragment>
   )
 }
